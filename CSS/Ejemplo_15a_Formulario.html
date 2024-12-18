@@ -1,0 +1,209 @@
+<!-- Ejemplo_15a_Formulario.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+        @font-face {
+            font-family: Lato;
+            src: url("Lato/Lato-Light.ttf");
+        }
+
+        @font-face {
+            font-family: Lato2;
+            src: url("Lato/Lato-Regular.ttf");
+        }
+
+        /* Formatear la página */
+        body {
+            font-family: Lato, Roboto, "Open Sans";
+            font-weight: 200;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        form {
+            width: 100%;
+            height: 300px;
+            margin: auto;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px grey;
+            background-color: #F9F9F9;
+            padding: 20px;
+            width: 40%;
+            height: 270px;
+            float: left;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            margin: 0 auto;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        section {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        label {
+            position: absolute;
+            top: 20%;
+            left: 10px;
+        }
+
+        label[for="nacimiento"] {
+            left: 150px;
+        }
+
+        /* Inputs de texto */
+        input:not([type="radio"]):not([type="submit"]):not([type="reset"]) {
+            font-size: 16px;
+            width: 80%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #747775;
+
+        }
+
+        input:not([type="radio"]):not([type="submit"]):not([type="reset"]):focus {
+            border-color: #0b57d0;
+            background-color: beige;
+            outline: none;
+        }
+
+        section[aria-label="crear"],
+        section[aria-label="usar"] {
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"] {
+            margin: auto;
+            width: auto;
+        }
+
+        i {
+            margin-right: 20px;
+            color: blue;
+            text-shadow: 5px 5px 5px grey;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            clear: both;
+            display: block;
+            margin: 10px auto;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+
+        /* NUEVOS */
+        /* Para los radio buttons */
+        section[aria-label="crear"],
+        section[aria-label="usar"] {
+            display: flex;
+        }
+
+        input:not([type="radio"]):not([type="submit"]):not([type="reset"]) {
+            transition: border-color 0.3s;
+            /* Transición suave del borde */
+        }
+
+        /* Posición inicial de los labels */
+        label {
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            color: grey;
+            pointer-events: none;
+        }
+
+        /* Subir label al enfocar o escribir en el input */
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+            top: 0;
+            font-size: 12px;
+            color: #0b57d0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Información personal</legend>
+            <section aria-label="nombre">
+                <input type="text" name="nombre" id="nombre" placeholder="">
+                <label for="nombre">Nombre</label><br>
+            </section>
+
+            <section aria-label="apellidos">
+                <input type="text" name="apellidos" id="apellidos" placeholder="">
+                <label for="apellidos">Apellidos (opcional)</label><br>
+            </section>
+
+            <section aria-label="nacimiento">
+                <input type="date" name="nacimiento" id="nacimiento" placeholder="">
+                <label for="nacimiento">Fecha de Nacimiento</label><br>
+            </section>
+
+            <section aria-label="genero">
+                <select name="genero" id="genero">
+                    <option disabled selected>Seleccionar</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="noquiero">Prefiero no decirlo</option>
+                </select>
+            </section>
+        </fieldset>
+
+        <fieldset>
+            <legend>Opciones de cuenta</legend>
+            <section aria-label="crear">
+                <label for="crear"><i class="fa-bounce fa-solid fa-m"></i> Crear dirección Gmail</label>
+                <input type="radio" name="direccion" id="crear" value="crear"><br>
+            </section>
+
+            <section aria-label="usar">
+                <label for="usar"><i class="fa-solid fa-envelope fa-bounce"></i> Usar tu correo</label>
+                <input type="radio" name="direccion" id="usar" value="usar"><br>
+            </section>
+            <hr>
+
+            <section aria-label="usuario">
+                <input type="text" name="usuario" id="usuario" placeholder="">
+                <label for="usuario">Usuario</label><br>
+            </section>
+
+            <section aria-label="clave">
+                <input type="password" name="clave" id="clave" placeholder="">
+                <label for="clave">Contraseña</label><br>
+            </section>
+
+            <section aria-label="clave2">
+                <input type="password" name="clave2" id="clave2" placeholder="">
+                <label for="clave2">Repetir Contraseña</label><br>
+            </section>
+        </fieldset>
+
+        <input type="submit" value="Crear cuenta">
+        <input type="reset" value="Borrar Datos">
+    </form>
+</body>
+
+</html>

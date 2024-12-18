@@ -1,0 +1,48 @@
+<!-- Ejemplo_09_Visualizacion.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización</title>
+    <style>
+        main {
+            width: 800px;
+            height: 450px;
+            background-color: pink;
+        }
+
+        p {
+            width: 260px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+            margin-left: 4px;
+            border: 1px solid blue;
+        }
+
+        p:nth-of-type(2) {
+            box-shadow: 2px 2px 10px blue;
+            /* Ocultar el elemento */
+            /* visibility: hidden;      */
+            display: none;
+        }
+
+        p:last-of-type {
+            overflow: scroll;   /* visible (D), hidden, scroll */
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p>Párrafo1</p>
+        <p>Párrafo2</p>
+        <p>Párrafo3</p>
+        <p>La propiedad CSS overflow especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el
+            contenido excedente en un elemento a nivel de bloque.</p>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- Ejemplo_10_Tipografia.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipografia</title>
+    
+    <style>
+        p:first-of-type {
+            /* Propiedades de fuentes */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.2em;       /* 1.2 -> 20% mayor tamaño base */
+            font-weight: 100;           /* Grosor */
+            font-style: italic;         /* Cursiva */
+            font-variant: small-caps;   /* Versalitas */
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch*/
+            font-stretch: condensed;    /* Separación de fuente */
+        }
+
+        p:nth-of-type(2) {
+            text-align: justify;    /* left, center, right, justify*/
+            line-height: 15px;      /* Interlineado */
+            text-decoration: underline;  /* Subrayado, sobrerayado, tachado */
+            text-decoration-color: blue;
+            text-decoration-style: dashed;
+            text-transform: capitalize; /* 1a letra palabra MAYUS*/
+            text-indent: 20px;          /* Sangría primera línea */
+            letter-spacing: 3px;        /* Espaciado entre letras */
+            word-spacing: 10px;         /* Espaciado entre palabras*/
+            
+            /* horizontal | vertical | difuminado | color ~ box-shadow*/
+            text-shadow: -2px -2px 5px red;
+            text-align-last: right;     /* Alineación ultima línea */
+            text-emphasis: "👶";
+            text-emphasis-position: under;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        La propiedad FONT permite establecer de una sola vez los valores para todas las propiedades: font-style,
+        font-variant, font-weight, font-size, line-height y font-family en una hoja de estilo.
+    </p>
+    <p>
+        La propiedad font establece los valores individuales tal como se especifica y a las otras su valor inicial.
+        Ver las propiedades individuales: font-style, font-variant, font-weight, font-size y font-family.
+    </p>
+</body>
+
+</html>

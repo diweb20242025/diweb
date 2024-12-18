@@ -1,0 +1,100 @@
+<!-- Ejemplo_07_Posicionamiento.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <style>
+        /* Formateado de la página */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            line-height: 1em;
+            padding: 0px;
+            margin: 1em;
+        }
+
+        main {
+            background-color: pink;
+            padding: 10px;
+            width: 40%;
+            position: relative; /* Probar a quitar!!*/
+            top: 100px;
+            z-index: 1;
+        }
+
+        section:first-of-type {
+            background-color: lightblue;
+            position: static;
+        }
+
+        section:nth-of-type(2) {
+            background-color: darkseagreen;
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+
+        section:nth-of-type(3) {
+            background-color: lightsalmon;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        section:last-of-type {
+            background-color: burlywood;
+            position: sticky;
+            bottom: 20px;
+        }
+
+        h1, nav {
+            position: fixed;
+            background-color: white;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Posicionamiento </h1>
+    <nav>Barra de Navegación</nav>
+    <main>
+        <section>
+            <h2>static</h2>
+            <article>
+                (M) <br>
+                La propiedad position de CSS especifica cómo un elemento es posicionado en el documento. Las propiedades
+                top, right, bottom, y left determinan la ubicación final de los elementos posicionados.
+            </article>
+        </section>
+        <section>
+            <h2>relative</h2>
+            <article>
+                Un elemento posicionado relativamente es un elemento cuyo valor computado de position es relative. Las
+                propiedades top y bottom especifican el desplazamiento vertical desde su posición original; las propiedades
+                left y right especifican su desplazamiento horizontal.
+            </article>
+        </section>
+        <section>
+            <h2>absolute</h2>
+            <article>
+                Un elemento posicionado absolutamente es un elemento cuyo valor computado de position es absolute o fixed.
+                Las propiedades top, right, bottom, y left especifican el desplazamiento desde los bordes del bloque
+                contenedor del elemento.
+            </article>
+        </section>
+        <section>
+            <h2>sticky</h2>
+            <article>
+                Un elemento posicionado fijamente es un elemento cuyo valor de position computado es sticky. Es tratado como
+                un elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

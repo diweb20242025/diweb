@@ -1,0 +1,36 @@
+<!-- Ejemplo_08_Flotante.html -->
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flotante</title>
+    <style>
+        main {
+            width: 800px;
+            height: 450px;
+            background-color: pink;
+        }
+        p {
+            width: 260px;
+            height: 100px;
+            background-color: aqua;
+            float: right;   /* Probar con left */
+            margin-left: 4px;
+            border: 1px solid blue; /* Probar con 2pxs */
+        }
+
+        p:nth-of-type(2) {
+            box-shadow: 2px 2px 10px blue;
+            clear: right;   /* Probar con left */
+        }
+    </style>
+ </head>
+ <body>
+    <main>
+        <p>Párrafo1</p>
+        <p>Párrafo2</p>
+        <p>Párrafo3</p>
+    </main>
+ </body>
+ </html>
