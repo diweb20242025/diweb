@@ -68,6 +68,16 @@
             color: #333;
         }
 
+        legend::first-letter {
+            font-size: 40px;
+            color: red;
+            font-weight: bold;
+        }
+
+        legend::after {
+            content: '😁';
+        }
+
         section {
             position: relative;
             margin-bottom: 15px;
@@ -91,11 +101,21 @@
             border: 1px solid #747775;
         }
 
+        
+
         input:not([type="radio"]):not([type="submit"]):not([type="reset"]):focus {
             border-color: #0b57d0;
             background-color: beige;
             outline: none;
         }
+
+        input:not([type="radio"]):not([type="submit"]):not([type="reset"]):active {
+            border-color: red;
+            background-color: pink;
+            outline: none;
+        }
+
+        
 
         /* El selector NOT de arriba es lo mismo que este de abajo */
         /*

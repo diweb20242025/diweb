@@ -1,11 +1,12 @@
 <!-- Ejemplo_16_Animaciones.html -->
- <!DOCTYPE html>
- <html lang="es">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaciones</title>
-    <style>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animaciones</title>
+   <style>
       p {
          width: 40%;
          font-size: 14px;
@@ -13,9 +14,62 @@
          border-radius: 5px;
          color: red;
       }
-    </style>
- </head>
- <body>
-    <p>¡Este párrafo va a transformarse!</p>
- </body>
- </html>
+
+      p:hover {
+         transition-property: all;
+         transition-duration: 5s;
+         transition-delay: 1s;
+         /*steps (pasos), ease (menos a más), ease-out (de más a menos)*/
+         transition-timing-function: ease;
+         width: 80%;
+         font-size: 30px;
+         background-color: pink;
+         border-radius: 10px;
+         color: green;
+      }
+
+      h2 {
+         filter: blur(0.5px);
+      }
+
+      h2:hover {
+         filter: blur(0);
+      }
+      h2::selection {
+         background-color: blue;
+         color: white;
+      }
+
+      table, td {
+         border: 1px solid blue;
+         opacity: 0.8; /*80% de opacidad */
+      }
+
+      td:last-child(2) {
+         background-color: magenta;
+         
+      }
+
+   </style>
+</head>
+
+<body>
+   <h2>Titulo de la página</h2>
+   <p>¡Este párrafo va a transformarse!</p>
+
+   <table>
+      <tr>
+         <td>Celda</td>
+         <td>Celda</td>
+         <td>Celda</td>
+      </tr>
+      <tr>
+         <td>Celda</td>
+         <td>Celda</td>
+         <td>Celda</td>
+      </tr>
+   </table>
+
+</body>
+
+</html>
