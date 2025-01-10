@@ -1,0 +1,63 @@
+<!--Ejemplo_08_Formulario.html-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+</head>
+
+<body>
+    <form action="grabaform.php" method="get">
+        <label for="modelo">Modelo móvil</label><br>
+        <input type="text" name="modelo" id="modelo"><br>
+        <label for="comentarios">Comentarios</label>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+        <input type="submit" value="Añadir al carrito">
+        <hr>
+        <p>Sexo:</p>
+        <input type="radio" name="sexo" id="mujer" value="mujer">
+        <label for="mujer">Mujer</label><br>
+        <input type="radio" name="sexo" id="hombre" value="hombre">
+        <label for="hombre">Hombre</label><br>
+        <input type="radio" name="sexo" id="indeterminado" value="indeterminado" checked>
+        <label for="indeterminado">Indeterminado</label><br>
+        <hr>
+       <fieldset>
+        <legend>Selector Cursos</legend>
+         <p>CURSOS:</p>
+        <input type="checkbox" name="cursos[]" id="html" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" name="cursos[]" id="css" value="css">
+        <label for="html">CSS</label><br>
+        <input type="checkbox" name="cursos[]" id="js" value="js">
+        <label for="html">JS</label><br>
+        <hr>
+    </fieldset>
+        <p>CURSOS:</p>
+        <input type="checkbox" name="cursos[]" id="html" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" name="cursos[]" id="css" value="css">
+        <label for="html">CSS</label><br>
+        <input type="checkbox" name="cursos[]" id="js" value="js">
+        <label for="html">JS</label><br>
+        <hr>
+        <p>ELIGE CIUDAD:</p>
+        <select name="ciudades" id="ciudades">
+            <option disabled selected>Pon ciudad</option>
+            <option value="madrid">Madrid</option> 
+            <optgroup label="Andalucia">
+               <option value="sevilla">Sevilla</option>
+               <option value="doshermanas">Dos Hermanas</option>
+            </optgroup>
+        </select>
+
+
+
+    </form>
+
+</body>
+
+</html>
