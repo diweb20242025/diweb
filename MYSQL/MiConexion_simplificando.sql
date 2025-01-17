@@ -37,12 +37,67 @@ COMMENT = "Tabla Principal Clientes";
 -- Tabla ventas
 CREATE TABLE IF NOT EXISTS ventas 
 (
+    NumTicket INT AUTO_INCREMENT, 
     Fecha DATE NOT NULL,
     Referencia TINYINT UNSIGNED NOT NULL,
     Nif CHAR(9) NOT NULL,
+    INDEX idx_ventas (NumTicket),
     PRIMARY KEY pk_ventas (Fecha, Referencia, Nif),
     FOREIGN KEY fk_productos (Referencia) REFERENCES productos(Referencia),
     FOREIGN KEY fk_clientes (Nif) REFERENCES clientes(Nif)
 ) ENGINE = innodb
 COMMENT = "Tabla Relacionada ventas";
 
+
+-- Borrar tablas
+-- 1º Borramos tablas relacionadas; Y al final, las principales
+-- DROP TABLE ventas;
+-- DROP TABLE clientes;
+-- DROP TABLE productos;
+-- DROP DATABASE simplificando;
+
+-- INSERT (Tema11)
+-- Sirve para insertar registros
+-- 1º Se insertan registros en tablas principales
+USE simplificando;
+
+-- Si se van a meter datos en TODOS los campos, no hace falta ponerlos
+INSERT INTO productos 
+VALUES (234, "Rotulador Rojo", 0.85, 2);
+INSERT INTO productos (Referencia, Descripcion, Precio)
+VALUES (112, "Rotulador Negro", 0.85);
+
+INSERT INTO clientes (Nif, Nombre, Genero, CodigoPostal)
+VALUES ("11111111A", "Ana", 1, 41702),
+("22222222B", "Maria José", 1, 41013),
+("33333333C", "Alfonso", 0, 41927);
+
+INSERT INTO ventas (Fecha, Referencia, Nif)
+VALUES ("2024-01-10", 234, "11111111A"),
+("2024-01-10", 112, "33333333C"),
+("2024-01-10", 234, "22222222B");
+
+-- UPDATE
+-- Actualizar datos de las tablas
+-- Ej: Vamos a modificar el nombre a una clienta (mi amiga Ana)
+UPDATE clientes
+SET Nombre = "Ana Pozo"
+WHERE Nif = "11111111A";
+
+UPDATE ventas
+SET Fecha = "2024-01-09",
+Referencia = 112
+WHERE NumTicket = 3;
+
+-- DELETE
+-- Borrar fila/s de una tabla
+-- NO SE PUEDE BORRAR DATOS DE LA TABLA PRINCIPAL
+-- SIN BORRAR SUS ASOCIADOS DE LA TABLA RELACIONADA
+DELETE FROM ventas
+WHERE NumTicket = 3;
+
+
+-- Comprobamos datos
+SELECT * FROM productos;
+SELECT * FROM clientes;
+SELECT * FROM ventas;
