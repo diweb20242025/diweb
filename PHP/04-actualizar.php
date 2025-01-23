@@ -25,7 +25,8 @@ if (isset($_REQUEST['enviar'])) {
 
     // En el caso de Categorias mando un Array
     $categorias = $_REQUEST['Categorias'] ?? [];
-    var_dump($categorias);
+    // var_dump($categorias);
+
     // implode sirve para escribir los elementos del array
     $categoriasValores = implode(',', $categorias);
     $alerta = " Referencia: $referencia
@@ -42,11 +43,7 @@ if (isset($_REQUEST['enviar'])) {
     // Encriptamos la sentencia (bind_param)
     $sentenciaPreparada->bind_param(
         "sdisi",
-        $descripcion,
-        $precio,
-        $stock,
-        $categoriasValores,
-        $referencia
+        $descripcion,$precio,$stock,$categoriasValores,$referencia
     );
     // ejecutaSQL es booleano; true (correcto), false (error)
     $ejecutaSQL = $sentenciaPreparada->execute();

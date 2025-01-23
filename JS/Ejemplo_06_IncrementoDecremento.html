@@ -1,0 +1,36 @@
+<!-- Ejemplo_06_IncrementoDecremento.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        function iniciar() {
+            // ++ Operador de incremento
+            // -- Operador de decremento
+            let num1 = 5;
+            alert(`El valor de num1 = ${num1}`);
+
+            num1++; // Equivale a: num1 = num1 + 1;
+            alert(`El valor de num1 = ${num1}`);
+            num1--; // Equivale a: num1 = num1 - 1;
+            alert(`El valor de num1 = ${num1}`);
+
+            // Acortar incrementos/decrementos
+            // (num1 = num1 + 1) ~ (num1 += 1)
+            num1 += 1;
+            alert(`El valor de num1 = ${num1}`);
+        }
+    </script>
+</head>
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-primary" 
+                onclick="iniciar();">Incremento - Decremento</button>
+        </form>
+    </main>
+</body>
+</html>
