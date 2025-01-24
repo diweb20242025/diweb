@@ -1,0 +1,50 @@
+<!-- Ejemplo_09_OperadoresComparacion.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function menor() {
+            let num1 = parseInt(prompt("Dame Entrada1"));
+            let num2 = parseInt(prompt("Dame Entrada2"));
+            let resultado = num1 < num2;
+            alert(`Es ${num1} < ${num2}? -> ${resultado}`);
+        }
+        function mayorIgual() {
+            let num1 = parseInt(prompt("Dame Entrada1"));
+            let num2 = parseInt(prompt("Dame Entrada2"));
+            let resultado = num1 >= num2;
+            alert(`Es ${num1} >= ${num2}? -> ${resultado}`);
+        }
+        function distinto() {
+            let num1 = parseInt(prompt("Dame Entrada1"));
+            let num2 = parseInt(prompt("Dame Entrada2"));
+            /* Aunque no se lo ponga, los operadores de 
+            comparación tienen preferencia sobre los de asignación
+            y es como si les pusiera un paréntesis*/
+            let resultado = (num1 != num2);
+            alert(`Es ${num1} != ${num2}? -> ${resultado}`);
+        }
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="menor();">menor</button>
+            <button type="submit" class="btn btn-primary" 
+            onclick="mayorIgual();">mayorIgual</button>
+            <button type="submit" class="btn btn-danger" 
+            onclick="distinto();">distinto</button>
+        </form>
+    </main>
+</body>
+
+</html>
