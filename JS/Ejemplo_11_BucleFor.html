@@ -1,0 +1,39 @@
+<!-- Ejemplo_11_BucleFor.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function iniciar() {
+            /* Mostrar el texto "Hola Mundo" 10 veces en 1 alert 
+            y además, en la consola */
+            let mensaje = "";
+            for (let i = 1; i <= 10; i++){
+                // mensaje = mensaje + "Hola Mundo \n"; 
+                mensaje += "Hola Mundo \n";    
+            }
+            
+            console.log(mensaje);   // Escribe por consola
+            alert(`-> ${mensaje}`);
+            
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>

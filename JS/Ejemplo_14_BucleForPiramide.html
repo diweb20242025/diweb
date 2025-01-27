@@ -1,0 +1,49 @@
+<!-- Ejemplo_14_BucleForPiramide.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function iniciar() {
+            /* 2. Escribe la siguiente pirámide
+            Pide el número de niveles de la pirámide 
+            *
+            **
+            *** -> 3 niveles */
+            
+            // A. Pedir niveles
+            let niveles = parseInt(prompt("Dame Niveles:"));
+            let piramide = "";
+
+            // B. Pasar de un nivel a otro
+            for( let i = 1; i <= niveles; i++) {
+                // C. Pintar tantos asteriscos como el nivel actual
+                // indices: 1º->i; 2º->j; 3º->k
+                for( let j=1; j <= i; j++) {
+                    piramide += "*";
+                }
+                piramide += "\n";
+            }
+            
+            alert(` ${piramide}`);
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>

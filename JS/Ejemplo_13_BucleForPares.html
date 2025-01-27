@@ -1,0 +1,56 @@
+<!-- Ejemplo_13_BucleForPares.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function iniciar() {
+            /* 1. Pide 2 números enteros.
+            Imprime en un alert los pares entre ambos*/
+            
+            // A. Pedir enteros
+            let num1 = parseInt(prompt("Dame Nº1:"));
+            let num2 = parseInt(prompt("Dame Nº2:"));
+
+            // B. Comprobar que num2 > num1
+            // Si no es así, intercambiamos variables
+            if(num2 < num1) {
+                let aux = num1;
+                num1 = num2;
+                num2 = aux;
+            }
+
+            // C. Comprobar si num1 es par
+            // En caso contrario, sumo 1
+            if(num1 % 2 != 0) {
+                num1++;
+            }
+
+            let pares = "";
+            for(let i = num1; i <= num2; i += 2)   {
+                //pares += i + "\n";
+                pares += `${i} \n`;
+            }
+
+            alert(` ${pares}`);
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>

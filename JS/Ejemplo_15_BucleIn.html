@@ -1,0 +1,42 @@
+<!-- Ejemplo_15_BucleForIn.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function iniciar() {
+            let numeros = [3, 5, 7, 2, 8];
+            let suma = 0;
+            /* Usando For clásico
+            for (let i = 0; i < numeros.length; i++) {
+                const elemento = numeros[i];
+                //suma = suma + elemento;
+                suma += elemento;
+            }
+            */
+            for (const i in numeros) {
+                const elemento = numeros[i];
+                suma += elemento;
+            }
+            alert(`La suma de elementos del array = ${suma}`);
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- Ejemplo_12_BucleForArray.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        
+        function iniciar() {
+            /* 3. Siendo un array  numeros = [3, 5, 7, 2, 8];
+            Suma los valores de dichos números*/
+            let numeros = [3, 5, 7, 2, 8];
+            let suma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                const elemento = numeros[i];
+                //suma = suma + elemento;
+                suma += elemento;
+            }
+            alert(`La suma de elementos del array = ${suma}`);
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" 
+            onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>
