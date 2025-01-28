@@ -1,0 +1,92 @@
+<!-- Ejemplo_16_BucleWhile.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        // ---- DECLARACIONES FUNCIONES ----
+        // Función suma (0E1S)
+        function suma() {
+            let num1 = parseInt(prompt("Dame Nº1"));
+            let num2 = parseInt(prompt("Dame Nº2"));
+            let resultado = num1 + num2;
+            // return es la salida de la función
+            return resultado;
+        }
+
+        // Función resta (NE1S) -> El más dificil
+        function resta(num1, num2) {
+            let resultado = num1 - num2;
+            return resultado;
+        }
+
+        // Función producto (0E0S) -> El más fácil
+        function producto() {
+            let num1 = parseInt(prompt("Dame Nº1"));
+            let num2 = parseInt(prompt("Dame Nº2"));
+            let resultado = num1 * num2;
+            alert(resultado);
+        }
+
+        // Función division (NE0S)
+        function division(num1, num2) {
+            let resultado = num1 / num2;
+            alert(resultado);
+        }
+
+        // función principal
+        function iniciar() {
+            let opcion = 0;
+            while (opcion < 5) {
+                opcion = parseInt(prompt(`--- MENU PRINCIPAL --- 
+                1. sumar
+                2. restar
+                3. multiplicar
+                4. dividir
+                5. salir`));
+
+                // switch = varios if
+                switch (opcion) {
+                    case 1:
+                        alert(suma());
+                        break;
+
+                    case 2: 
+                        let numero1 = parseInt(prompt("Dame Nº1"));
+                        let numero2 = parseInt(prompt("Dame Nº2"));
+                        // Los nombres de las variables en
+                        // parámetros DA IGUAL. Solo vale POSICIONES
+                        alert(resta(numero1, numero2));
+                        break;
+                    case 3:
+                        producto();
+                        break;
+                    case 4:
+                        let num1 = parseInt(prompt("Dame Nº1"));
+                        let num2 = parseInt(prompt("Dame Nº2"));
+                        division(num1, num2);
+                        break;
+                    default:
+                        alert("Opción Incorrecta!");
+                        break;
+                }
+            }
+            alert("Se acabó el programa!");
+        }
+
+    </script>
+</head>
+
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>
