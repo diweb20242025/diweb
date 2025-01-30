@@ -1,0 +1,85 @@
+<!DOCTYPE html>     <!-- Ejemplo_18_POO_Herencia.html -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+        // Con la herencia puedo reutilizar código
+        // Defino una clase padre (o superclase)
+        class Vehiculo {
+            // Atributos
+            modelo = "";
+            precio = 0.0;
+            velocidad = 0;
+
+            // Constructor
+            constructor(modelo, precio) {
+                this.modelo = modelo;
+                this.precio = precio;
+            }
+
+            // Métodos
+            acelerar(aceleracion) {
+                this.velocidad += aceleracion;
+            }
+
+            frenar(frenado) {
+                this.velocidad -= frenado;
+            }
+
+            imprimir() {
+                return JSON.stringify(this, null, 2);
+            }
+        }
+
+        // con extends Vehiculo HEREDO los 3 atributos
+        // y 3 métodos de la SuperClase
+        class Moto extends Vehiculo{
+            // Atributo propio
+            ruedas = 2;
+
+            // El constructor
+            // usamos la palabra resevada super
+            // super, aquí es el constructor del padre
+            constructor (modelo, precio) {
+                super(modelo, precio);
+            }
+        }
+
+        class Coche extends Vehiculo{
+            // Atributo propio
+            ruedas = 4;
+
+            // El constructor
+            constructor (modelo, precio) {
+                super(modelo, precio);
+            }
+        }
+
+        // función principal
+        function iniciar() {
+            // Creamos los objetos (de clases hijas)
+            let motoAlfonso = new Moto("Piaggio Zip", 600);
+            let cocheMJose = new Coche("Nissan Micra", 8000);
+            motoAlfonso.acelerar(50);
+            cocheMJose.acelerar(100);
+            // Ve la guardia civil
+            cocheMJose.frenar(20);
+
+            // Pintamos los vehiculos de la peña!
+            alert(` Moto Alfonso: \n ${JSON.stringify(motoAlfonso, null, 2)}`);
+            alert(` Coche María José: \n ${JSON.stringify(cocheMJose, null, 2)}`);
+        }
+    </script>
+</head>
+<body>
+    <main class="m-3 p-3">
+        <form action="#" method="post" class="form">
+            <button type="submit" class="btn btn-success" onclick="iniciar()">Iniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>
