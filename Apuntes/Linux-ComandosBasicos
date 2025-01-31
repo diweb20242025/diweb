@@ -1,0 +1,12 @@
+*COMANDOS BÁSICOS LINUX (CONSOLA)*
+- cd ~ -> Cambiar al directorio personal
+- ls -> Lista carpetas
+- ls -a -> Incluye archivos ocultos 
+    (llevan un punto por delante)
+- mkdir <directorio> -> Crea carpeta
+- clear -> borra la pantalla de la consola
+- rm -R <directorio> -> Borra directorio
+- rm <archivo> -> Borra 1 archivo
+- nano <archivo> -> Crear y edita 1 archivo
+- cp <archivo>  <destino> -> Copiar/pegar
+- mv <archivo>  <destino> -> Cortar/pegar

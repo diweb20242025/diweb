@@ -1,0 +1,39 @@
+*OPERADORES JS*
+=====================
+Matemáticos
+---------------
++ -> Suma
+- -> Resta
+* -> Producto
+/ -> División
+% -> Módulo
+
+Lógicos
+---------------
+&& -> AND
+|| -> OR
+! -> NOT
+
+Comparación
+---------------
+< -> Menor que
+> -> Mayor que
+<= -> Menor o igual
+>= -> Mayor o igual
+== -> Igual 
+=== -> Igual con tipo
+!= -> Distinto
+(Devuelve true|false, booleano)
+
+*CONTROL DE FLUJO*
+CONDICIONALES
+----------------
+- if -> si
+- if...else -> si...si no
+- switch -> if anidado
+
+BUCLE
+---------------
+- while -> mientras (bucle)
+- do...while -> hacer mientras (NO USAR!)
+- for -> Bucle definido

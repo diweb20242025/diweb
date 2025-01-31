@@ -1,0 +1,23 @@
+*INSTALACIÓN DE WORDPRESS*
+# 1. Crear BBDD en MySQL
+mysql -u root -p #root
+CREATE DATABASE wordpress;
+exit;
+
+# 2. Bajar Wordpress y descomprimir
+cd ~/Descargas
+wget https://es.wordpress.org/latest-es_ES.zip
+unzip latest-es_ES.zip
+sudo mv wordpress /var/www/html
+sudo rm latest-es_ES.zip
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+
+# 3. Configurar el instalador
+# En el navegador:
+/localhost/wordpress
+# Vamos a ello!
+# BBDD: wordpress
+# Usuario: root 
+# Contraseña: root
+# Instalar!

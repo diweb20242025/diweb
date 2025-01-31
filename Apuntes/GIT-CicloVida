@@ -1,0 +1,29 @@
+*CICLO DE VIDA GIT*
+1. Crear repo en Github
+    - Desmarcar [] README
+2. cd Documentos
+3. mkdir Curso
+4. cd Curso
+5. echo "# diweb" >> README.md
+6. git status
+7. git add README.md
+8. git commit -m "first commit"
+9. git config --global --edit
+ -> Solo 1 vez!
+    Quitar # (comentarios)
+    -> name = TuNombre
+    -> email = correogithub@gmail.com
+    CTRL + O y CTRL + X
+10. git branch -M main
+11. git remote add origin https://github.com/diweb20242025/diweb.git
+12. (IMPORTANTE) Necesitamos un TOKEN
+    Para crearlo, ir a Github
+    a) Pulsar en el menú principal 
+    b) Settings > Developer Settings
+    c) Personal Access Tokens > Token Classic
+    d) Generate New Token > Generate New Token (classic)
+13. git push -u origin main
+14. Poner usuario Y TOKEN!!
+
+    
+    
