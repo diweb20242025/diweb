@@ -1,0 +1,64 @@
+<!-- Ejercicio_03_Boletin8.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletin Marta Ejercicio 8 y 9</title>
+    <script>
+        class Producto {
+            // Atributos
+            nombre = "";
+            precio = 0.0;
+            stock = 0;
+
+            constructor(nombre, precio, stock) {
+                this.nombre = nombre;
+                this.precio = precio;
+                this.stock = stock;
+            }
+
+            importeEnStock() {
+                return this.precio * this.stock; 
+            }
+        }
+
+        function principal() {
+            let producto = new Producto("Auriculares BT", 23, 44);
+            alert(JSON.stringify(producto, null, 2));
+            console.log(producto.importeEnStock());
+            for (let i = 1; i <= 3; i++) {
+                producto.stock --;
+            }
+            
+            producto.precio = producto.precio * 1.05;
+            alert(`Producto:`+ JSON.stringify(producto, null, 2));
+        }
+
+        function Marta() {
+            let producto = {
+                nombre : "Auriculares BT",
+                precio : 23,
+                stock : 44,
+
+                // Función anónima
+                importeEnStock: function() {
+                    return this.precio * this.stock; 
+                }
+            }
+
+            console.log(`Producto: ` +JSON.stringify(producto, null, 2));
+            console.log(producto.importeEnStock());
+            for (let i = 1; i <= 3; i++) {
+                producto.stock --;
+            }
+            producto.precio = producto.precio * 1.05;
+            alert(`Producto:`+ JSON.stringify(producto, null, 2));
+        }
+    </script>
+</head>
+<body>
+    <button type="submit" onclick="principal()">Iniciar</button>
+    <button type="submit" name="boton1" onclick="Marta()">Opción Marta</button>
+</body>
+</html> 

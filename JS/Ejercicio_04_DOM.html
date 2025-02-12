@@ -1,0 +1,101 @@
+<!-- Ejercicio_04_DOM.html -->
+<!-- Basado en boletin Marta Ejs: 16--> 
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1 id="titular">Titulo1</h1>
+    <section id="contenedor">
+        <p id="principal">Párrafo principal</p>
+        <p class="secundario">Párrafo 2.1</p>
+        <p class="secundario">Párrafo 2.2</p>
+        <p class="secundario">Párrafo 2.3</p>
+    </section>
+    <section>
+        <p>Volumen Prisma</p>
+        Base: <input type="number" name="base" id="base"><br>
+        Altura: <input type="number" name="altura" id="altura"><br>
+        Color: <input type="color" name="color" id="color"><br>
+    </section>
+    <!-- MUY IMPORTANTE! Para trabajar con el DOM, 
+     tiene que estar toda la estructura CARGADA!! -->
+     <script>
+        function imprimeH1() {
+            // document -> objeto documento (página web)
+            // getElementById -> Método del objeto; devuelve 1 objeto
+            // textContent -> Atributo del objeto: contenido texto
+            let h1 = document.getElementById("titular").textContent;
+            alert(h1);
+            console.log(document.querySelector("#titular").textContent);
+            // Devuelve un objeto con decenas de atributos
+            console.log(document.querySelector("#titular"));
+        }
+
+        function imprimeParrafos() {
+            let parrafos = document.querySelectorAll("p");
+            //let parrafos = document.getElementsByTagName("p");
+            let cadena = "";
+            // for...of (foreach moderno)
+            for (const p of parrafos) {
+                cadena += p.textContent + "\n";
+            }
+            alert(cadena);
+        }
+
+        function volumenPrisma() {
+            let base = document.querySelector("#base").value;
+            let altura = document.querySelector("#altura").value;
+            alert(`El volumen del prisma es ${base * altura}`);
+
+            base = parseInt(prompt("Por favor, dame Base:"));
+            altura = parseInt(prompt("Dime la altura"));
+            alert(`El volumen del prisma es ${base * altura}`);
+        }
+
+        function agregaParrafo() {
+            let parrafo = prompt("Dame un texto");
+            let p = document.createElement("p");
+            p.textContent = parrafo;
+            let section = document.querySelector("#contenedor");
+            section.appendChild(p);
+        }
+
+        function quitaParrafo() {
+            let parrafo = parseInt(prompt("Que parrafo vas a borrar 1-4?"))
+            let parrafos = document.querySelectorAll("p");
+            parrafos[parrafo-1].parentNode.removeChild(parrafos[parrafo-1]);
+        }
+
+        function cambiaFondo() {
+            let rgb = document.getElementById("color").value;
+            document.body.style.backgroundColor = rgb;
+        }
+
+        function principal () {
+            let cadena = `\t 1. Imprime <h1>
+         2. Imprime párrafos <p>
+         3. Volumen Prisma  
+         4. Añadir párrafo
+         5. Eliminar párrafo
+         6. Cambiar Fondo
+         7. Salir 
+         Elije opción:`;
+         let opcion = parseInt(prompt(cadena));
+         switch (opcion) {
+            case 1: imprimeH1();        break;
+            case 2: imprimeParrafos();  break;
+            case 3: volumenPrisma();    break;
+            case 4: agregaParrafo();    break;
+            case 5: quitaParrafo();     break;
+            case 6: cambiaFondo();      break;
+            default: alert("Fin Programa"); break;
+         }
+        }
+     </script>
+     <button type="submit" onclick="principal()">Iniciar</button>
+ </body>
+ </html>

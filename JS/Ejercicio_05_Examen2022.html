@@ -1,0 +1,112 @@
+<!DOCTYPE html>         <!-- Ejercicio_05_Examen2022.html -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen JS 2022</title>
+    <script>
+        // Defino las clases
+        class Coche {
+            // Atributos
+            modelo = "";
+            bateria = 0;
+            velocidad = 0;
+
+            // Constructor
+            constructor(modelo) {
+                this.modelo = modelo;
+                this.bateria = 40;
+                this.velocidad = 0;
+            }
+
+            // Métodos
+            acelerar(velocidad) {
+                this.velocidad = this.velocidad + velocidad;
+                if(velocidad>10 && velocidad < 30) {
+                    this.bateria = this.bateria * 0.99; // -1%
+                }
+                if(velocidad>=30 && velocidad <50) {
+                    this.bateria = this.bateria * 0.98; // -2%
+                }
+            }
+
+            frenar(velocidad) {
+                this.velocidad = this.velocidad - velocidad;
+                if(velocidad>10 && velocidad < 30) {
+                    this.bateria = this.bateria * 1.005; // +0.5%
+                }
+                if(velocidad>=30 && velocidad <50) {
+                    this.bateria = this.bateria * 1.01; // +1%
+                }
+            }
+        }
+
+        function nomina() {
+            let anual = parseFloat(prompt("Dame sueldo anual:"));
+            let mensual = anual / 12;
+            let irpf = 0;   // Según el bruto, defino el porcentaje irpf
+            if(anual > 10000 && anual <20000) {
+                irpf = 15;      // En caso de intervalos, se emplea AND
+            } else if (anual >= 20000 && anual <30000) {
+                irpf = 25;
+            } else if (anual >= 30000 && anual <=40000) {
+                irpf = 35;
+            }
+
+            let neto = mensual -(irpf * mensual/100) - (mensual * 6.4 / 100);
+            return neto;
+        }
+
+        function crearCoche() {
+            let miKona = new Coche("Hyundai Kona");
+            alert(JSON.stringify(miKona, null, 2));
+            miKona.acelerar(35);
+            alert(JSON.stringify(miKona, null, 2));
+            miKona.frenar(20);
+            alert(JSON.stringify(miKona, null, 2));
+        }
+
+        function ec2Grado(a,b,c) {  // Ej: x² -5x +6 = 0 -> x1=2 y x2=3
+            let x1,x2 = 0;     
+            let discriminante = (b*b) - (4*a*c);
+            if(discriminante<0) {
+                alert("No hay solución");
+            } else {        // Raiz cuadrada: Math.sqrt()
+                x1 = (-b + Math.sqrt(discriminante)) / (2*a);
+                x2 = (-b - Math.sqrt(discriminante)) / (2*a);
+                alert(x1);
+                alert(x2);
+            }
+        }
+
+        function menu() {
+            let cadena = `\t 1. Nómina
+         2. Coche
+         3. Ec2Grado
+         4. TablasMultiplicar
+         5. Salir 
+         Elije opción:`;
+
+            let opcion = 0;
+            while (opcion < 5) {
+                opcion = parseInt(prompt(cadena));
+                switch (opcion) {
+                    case 1: alert(nomina()); break;
+                    case 2: crearCoche(); break;
+                    case 3: 
+                    let a = parseInt(prompt("Dame A:"));
+                    let b = parseInt(prompt("Dame B:"));
+                    let c = parseInt(prompt("Dame C:"));
+                    ec2Grado(a, b, c); 
+                    break;
+                    case 4: tablasMultiplicar(x, y); break;
+                    default: alert("Fin"); break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="submit" onclick="menu()">Menu</button>
+</body>
+</html>
